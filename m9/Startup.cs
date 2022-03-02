@@ -33,6 +33,8 @@ namespace m9
                 options.UseSqlite(Configuration.GetConnectionString("BookConnection"));
             });
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+            services.AddScoped<IShopperRepository, EFShopperRepository>();
+
 
             //for razor page
             services.AddRazorPages();
@@ -43,6 +45,7 @@ namespace m9
 
             services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

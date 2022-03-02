@@ -36,7 +36,7 @@ namespace m9.Models
         public override void ClearBasket()
         {
             base.ClearBasket();
-            Session.Remove("Basket");//hhhhh
+            Session.Remove("Basket");
         }
     }
 }
